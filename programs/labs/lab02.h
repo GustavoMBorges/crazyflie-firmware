@@ -13,6 +13,6 @@ int main()
         motor = 0.1;
         wait(5);
         motor = 0.0;
-        wait(5);
+        wait(6);
     }
 }
