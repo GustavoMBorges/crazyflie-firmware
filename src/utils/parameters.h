@@ -20,5 +20,7 @@ const float lab02_a2 = 1.295e-7;
 
 const float lab03_kl=1.632e-08;
 
+const float lab04_kd=1.538e-10;
+
 
 #endif
