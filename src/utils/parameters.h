@@ -15,12 +15,12 @@ const float I_zz = 29.0e-6; // kg.m^2
 const float l = 33.0e-3;    // m
 
 
-const float lab02_a1 = 1.987e-14;
-const float lab02_a2 = 1.295e-7;
+const float a1 = 1.987e-14;
+const float a2 = 1.295e-7;
 
-const float lab03_kl=1.632e-08;
+const float kl=1.632e-08;
 
-const float lab04_kd=1.538e-10;
+const float kd=1.538e-10;
 
 
 #endif

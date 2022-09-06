@@ -9,7 +9,7 @@ PwmOut motor3(MOTOR3);
 PwmOut motor4(MOTOR4);
 
 // Converts desired angular velocity ( rad/s) to PWM signal (%)
-float control_motor(float omega) { return lab02_a2 * (omega * omega) + lab02_a1 * omega; }
+float control_motor(float omega) { return a2 * (omega * omega) + a1 * omega; }
 
 // Main program
 int main() {
