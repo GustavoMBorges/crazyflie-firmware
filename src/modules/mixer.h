@@ -5,7 +5,7 @@
 #include "mbed.h"
 
 // Total notes count.
-#define NOTES_COUNT 40
+#define NOTES_COUNT 305
 // The duration(delay) and frequency numbers in the array.
 #define NOTE_SIZE 2
 
