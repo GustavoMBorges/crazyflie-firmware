@@ -4,6 +4,13 @@
 #include "crazyflie.h"
 #include "mbed.h"
 
+// Total notes count.
+#define NOTES_COUNT 305
+// The duration(delay) and frequency numbers in the array.
+#define NOTE_SIZE 2
+
+
+
 // Mixer class
 class Mixer {
 public:
@@ -14,8 +21,8 @@ public:
   void arm();
   void disarm();
   int i;
-private:
 
+private:
   bool armed;
   // Motors PWM outputs
   PwmOut motor_1, motor_2, motor_3, motor_4;
@@ -30,7 +37,6 @@ private:
   void mixer(float f_t, float tau_phi, float tau_theta, float tau_psi);
   // Convert desired angular velocity ( rad /s) to PWM signal (%)
   float control_motor(float omega);
-
 };
 
 #endif
