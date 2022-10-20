@@ -1,6 +1,6 @@
-#include " USBSerial .h"
-#include " crazyflie .h"
-#include " mbed .h"
+#include "mbed.h"
+#include "crazyflie.h"
+#include "USBSerial.h"
 
 // Define serial object
 USBSerial serial;
@@ -33,8 +33,8 @@ int main() {
     // Print attitude
     if (serial.readable()) {
       command = serial.getc();
-      if (command == ’p’) {
-        serial.printf("%f ,%f ,%f\n", att_est.phi, att_est.theta, att_est.psi);
+      if (command == 'p') {
+        serial.printf("%f,%f,%f\n", att_est.phi, att_est.theta, att_est.psi);
       }
     }
   }

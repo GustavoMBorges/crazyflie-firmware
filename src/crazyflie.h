@@ -20,5 +20,7 @@
 #include "drivers/pmw3901.h"    // Optical flow sensor
 
 #include "modules/mixer.h"
+#include "modules/attitude_estimator.h"
+#include "modules/attitude_controller.h"
 
 #endif
