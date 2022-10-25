@@ -47,5 +47,10 @@ const float Wn_y= 4.0/(zeta_y*Ts_y);
 const float kp_controlador_y=Wn_y*Wn_y;
 const float kd_controlador_y=2*zeta_y*Wn_y;
 
+const float l_ver = 10.0;
+const float zeta_ver = sqrt(2.0)/2.0;
+const float dt_range = 0.05;
+const float l1 = l_ver*l_ver;
+const float l2 = 2*zeta_ver*l_ver;
 
 #endif
