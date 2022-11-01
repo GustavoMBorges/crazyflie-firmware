@@ -53,4 +53,7 @@ const float dt_range = 0.05;
 const float l1 = l_ver*l_ver;
 const float l2 = 2*zeta_ver*l_ver;
 
+const float kp_lab10 = 5.86;
+const float kd_lab10 = 3.42;
+
 #endif
