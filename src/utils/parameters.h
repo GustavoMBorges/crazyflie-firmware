@@ -24,7 +24,7 @@ const float kd=1.538e-10;
 
 const float dt = 0.002;
 
-const float wc = 1.0;
+const float wc = 50.0;
 const float alfa = (wc*dt)/(1.0 + wc*dt);
 
 // phi e theta
@@ -55,5 +55,19 @@ const float l2 = 2*zeta_ver*l_ver;
 
 const float kp_lab10 = 5.86;
 const float kd_lab10 = 3.42;
+
+const float ang_visao = 42.0*(pi/180.0);
+const float W = 420.0;
+const float sigma = (2.0*tan(ang_visao/2.0))/(W*dt);
+const float l_hor = 50.0;
+
+const float Ts_hor=0.4;
+const float UP_hor=0.005;
+
+const float zeta_hor = abs(log(UP_hor))/sqrt(log(UP_hor)*log(UP_hor)+pi*pi);
+const float Wn_hor= 4.0/(zeta_hor*Ts_hor);
+
+const float kp_hor=Wn_hor*Wn_hor;
+const float kd_hor=2*zeta_hor*Wn_hor;
 
 #endif
