@@ -13,20 +13,29 @@ HorizontalController hor_cont;
 // Ticker objects
 Ticker tic, tic_range;
 
+Timer tim;
+
 // Interrupt flag and counter variables
 bool flag, flag_range;
 
 // Callback functions
 void callback() { flag = true; }
 void callback_range() { flag_range = true; }
+void mudar_altura(){
+    float z_r=0;
+}
 
 // Main program
 int main() {
+
+  
+    
   // Set references
   float z_r = 0.5;
   float x_r = 0.0;
   float y_r = 0.0;
   float psi_r = 0.0;
+
   // Initialize estimators objects
   att_est.init();
   ver_est.init();
@@ -36,11 +45,22 @@ int main() {
   tic_range.attach(&callback_range, dt_range);
   // Arm motors and run controller while stable
   mixer.arm();
+
+  // Início do timer
+  tim.start();
+  
   while (abs(att_est.phi) <= pi / 4.0 && abs(att_est.theta) <= pi / 4.0 &&
          abs(att_est.p) <= 4.0 * pi && abs(att_est.q) <= 4.0 * pi &&
          abs(att_est.r) <= 4.0 * pi) {
+
+   
     if (flag) {
       flag = false;
+
+    if (tim.read() > 5){
+        z_r = -0.5;
+    }
+
       att_est.estimate();
       ver_est.predict(ver_cont.f_t);
       if (flag_range) {

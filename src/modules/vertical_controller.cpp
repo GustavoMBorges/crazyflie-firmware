@@ -7,7 +7,7 @@ VerticalController ::VerticalController() {
 
 // Control thrust force (N) given vertical position (m) and velocity (m/s)
 void VerticalController ::control(float z_r, float z, float w) { 
-    float a_r = control_siso(z_r, z, w, kp_lab10, kd_lab10);
+    float a_r = control_siso(z_r, z, w, kp_z, kd_z);
     f_t = m*(g + a_r);
 }
 

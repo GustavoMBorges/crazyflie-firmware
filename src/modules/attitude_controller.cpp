@@ -13,11 +13,11 @@ void AttitudeController ::control(float phi_r, float theta_r, float psi_r,
                                   float phi, float theta, float psi, float p,
                                   float q, float r) {
 
-  float phi_ac = control_siso(phi_r, phi, p, kp_controlador, kd_controlador);
+  float phi_ac = control_siso(phi_r, phi, p, kp_phi, kd_phi);
   float theta_ac =
-      control_siso(theta_r, theta, q, kp_controlador, kd_controlador);
+      control_siso(theta_r, theta, q, kp_theta, kd_theta);
   float psi_ac =
-      control_siso(psi_r, psi, r, kp_controlador_y, kd_controlador_y);
+      control_siso(psi_r, psi, r, kp_psi, kd_psi);
 
   tau_phi = I_xx * phi_ac;
   tau_theta = I_yy * theta_ac;
