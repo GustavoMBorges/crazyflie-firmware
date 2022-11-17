@@ -21,17 +21,13 @@ bool flag, flag_range;
 // Callback functions
 void callback() { flag = true; }
 void callback_range() { flag_range = true; }
-void mudar_altura(){
-    float z_r=0;
-}
 
 // Main program
 int main() {
 
-  
-    
+  wait(2.0);
   // Set references
-  float z_r = 0.5;
+  float z_r = 0.0;
   float x_r = 0.0;
   float y_r = 0.0;
   float psi_r = 0.0;
@@ -48,6 +44,7 @@ int main() {
 
   // Início do timer
   tim.start();
+  float t;
   
   while (abs(att_est.phi) <= pi / 4.0 && abs(att_est.theta) <= pi / 4.0 &&
          abs(att_est.p) <= 4.0 * pi && abs(att_est.q) <= 4.0 * pi &&
@@ -57,8 +54,22 @@ int main() {
     if (flag) {
       flag = false;
 
-    if (tim.read() > 5){
-        z_r = -0.5;
+    t = tim.read();
+    // Subida em z
+    if (t > 0){
+        z_r = (h/ts)*t; // Um metro em dois segundos.
+        x_r = 0.0;
+    }
+    if (t > ts){
+        z_r = h;
+        x_r = (d/tv)*(t-ts);  
+    }
+    if (t > (ts+tv)) {
+        z_r = (h/td)*(tt-t);
+        x_r = d;
+    }
+    if (t > (tt+1.0)){
+        mixer.disarm();
     }
 
       att_est.estimate();

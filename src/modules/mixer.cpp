@@ -87,7 +87,7 @@ void Mixer ::arm() {
   while (i > 0) {
     led_red_l = false;
     led_red_r = false;
-    wait(1);
+    wait(0.2);
     led_red_l = true;
     led_red_r = true;
     wait(0.2);

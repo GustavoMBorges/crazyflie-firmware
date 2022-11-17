@@ -78,13 +78,13 @@ const float kd_y=kd_x;
 
 // Parâmetros de voô
 
-// Posição z
-const float tempo_subida_z = 2;
-const float tempo_parado_z = 5;
-const float tempo_descida_z = 2; 
+const float ts = 2;
+const float tv= 5;
+const float td = 2;
+const float tt = ts + tv + td;
 
-// Posição x
-const float tempo_parado_x = 2;
-const float tempo_deslocamento_x = 5;
+const float h = 1.0;
+const float d = 2.0;
+
 
 #endif
